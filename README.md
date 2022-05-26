@@ -6,6 +6,9 @@
 # install dependencies
 $ npm install
 
+# serve json server at localhost:3001
+$ npx json-server --watch db.json --port 3001
+
 # serve with hot reload at localhost:3000
 $ npm run dev
 
