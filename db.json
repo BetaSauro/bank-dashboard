@@ -1,0 +1,185 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "type": "deposit",
+      "establishment": "LOCAL 1",
+      "amount": 100,
+      "date": 1653538987,
+      "category": "food",
+      "card": 1
+    },
+    {
+      "id": 2,
+      "type": "withdraw",
+      "establishment": "PESSOA 1",
+      "amount": 50,
+      "date": 1653538987,
+      "category": "transfer",
+      "card": 1
+    },
+    {
+      "id": 3,
+      "type": "deposit",
+      "establishment": "LOCAL 2",
+      "amount": 150,
+      "date": 1653538987,
+      "category": "transport",
+      "card": 2
+    },
+    {
+      "id": 4,
+      "type": "withdraw",
+      "establishment": "PESSOA 2",
+      "amount": 100,
+      "date": 1653538987,
+      "category": "food",
+      "card": 2
+    },
+    {
+      "id": 5,
+      "type": "withdraw",
+      "establishment": "PESSOA 3",
+      "amount": 50,
+      "date": 1653538987,
+      "category": "transfer",
+      "card": 2
+    },
+    {
+      "id": 6,
+      "type": "deposit",
+      "establishment": "LOCAL 3",
+      "amount": 150,
+      "date": 1653538987,
+      "category": "transport",
+      "card": 1
+    },
+    {
+      "id": 7,
+      "type": "withdraw",
+      "establishment": "PESSOA 4",
+      "amount": 100,
+      "date": 1653538987,
+      "category": "food",
+      "card": 1
+    },
+    {
+      "id": 8,
+      "type": "withdraw",
+      "establishment": "PESSOA 3",
+      "amount": 50,
+      "date": 1653538987,
+      "category": "transfer",
+      "card": 1
+    },
+    {
+      "id": 9,
+      "type": "deposit",
+      "establishment": "LOCAL 3",
+      "amount": 150,
+      "date": 1653538987,
+      "category": "transport",
+      "card": 2
+    },
+    {
+      "id": 10,
+      "type": "withdraw",
+      "establishment": "PESSOA 4",
+      "amount": 100,
+      "date": 1653538987,
+      "category": "food",
+      "card": 1
+    },
+    {
+      "id": 11,
+      "type": "withdraw",
+      "establishment": "PESSOA 3",
+      "amount": 50,
+      "date": 1653538987,
+      "category": "transfer",
+      "card": 2
+    },
+    {
+      "id": 12,
+      "type": "deposit",
+      "establishment": "LOCAL 3",
+      "amount": 150,
+      "date": 1653538987,
+      "category": "transport",
+      "card": 1
+    },
+    {
+      "id": 13,
+      "type": "withdraw",
+      "establishment": "PESSOA 1",
+      "amount": 100,
+      "date": 1653538987,
+      "category": "food",
+      "card": 1
+    },
+    {
+      "id": 14,
+      "type": "withdraw",
+      "establishment": "LOCAL 2",
+      "amount": 50,
+      "date": 1653538987,
+      "category": "transfer",
+      "card": 1
+    },
+    {
+      "id": 15,
+      "type": "deposit",
+      "establishment": "LOCAL 1",
+      "amount": 150,
+      "date": 1653538987,
+      "category": "transport",
+      "card": 2
+    },
+    {
+      "id": 16,
+      "type": "withdraw",
+      "establishment": "PESSOA 2",
+      "amount": 100,
+      "date": 1653538987,
+      "category": "food",
+      "card": 2
+    },
+    {
+      "id": 17,
+      "type": "withdraw",
+      "establishment": "PESSOA 1",
+      "amount": 50,
+      "date": 1653538987,
+      "category": "transfer",
+      "card": 2
+    }
+  ],
+
+  "cards": [
+    {
+      "id": 1,
+      "number": "1234123412341234",
+      "cvv": "123",
+      "expiration": "12/20",
+      "name": "John Doe",
+      "brand": "visa",
+      "type": "debit/credit",
+      "color": "black",
+      "limit": 1000,
+      "avaliable": 1000,
+      "balance": 65621.34
+    },
+    {
+      "id": 2,
+      "number": "1234123412344321",
+      "cvv": "123",
+      "expiration": "12/20",
+      "name": "John Doe",
+      "brand": "mastercard",
+      "type": "credit",
+      "color": "platinum",
+      "limit": 1000,
+      "avaliable": 500
+    }
+  ]
+}

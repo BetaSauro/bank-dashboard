@@ -1,81 +1,23 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
+  <v-row>
+    <v-col cols="8" class="pa-5">
+      <h2>Hello, Daniel</h2>
+    </v-col>
+    <v-col cols="4" class="pa-5">
+      <v-card color="secondary">
+        <v-card-title> Account Balance </v-card-title>
+        <v-card-subtitle class="text-h5"> {{getBalance(cards)}} </v-card-subtitle>
       </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-        </v-card-actions>
-      </v-card>
+      <v-list color="transparent">
+        <div class="text-h5 pa-3"> My Cards </div>
+        <v-list color="transparent">
+        <CreditCard
+          v-for="card in cards"
+          :key="card.id"
+          :card="card"
+        ></CreditCard>
+      </v-list>
+      </v-list>
     </v-col>
   </v-row>
 </template>
@@ -83,5 +25,39 @@
 <script>
 export default {
   name: 'IndexPage',
+
+  computed: {
+    cards() {
+      return this.$store.state.cards.cards
+    },
+    transactions() {
+      return this.$store.state.transactions.transactions
+    },
+  },
+
+  mounted() {
+    this.$store.dispatch('cards/fetchCards')
+    this.$store.dispatch('transactions/fetchTransactions')
+  },
+
+  
+  methods: {
+    getBalance(cards){
+      let balance = 0;
+      for(const x in cards){
+        if(cards[x].balance){
+          balance += cards[x].balance
+        }
+      }
+
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(balance)
+    }
+  },
 }
 </script>
+
+<style scoped>
+.text-h5{
+  color: #5c509b ;
+}
+</style>
